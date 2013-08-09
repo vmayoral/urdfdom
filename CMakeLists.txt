@@ -59,21 +59,21 @@ if (NOT MSVC)
 endif()
 
 
-message(STATUS "Configuration successful. Type make to compile urdfdom")
+#message(STATUS "Configuration successful. Type make to compile urdfdom")
 
 # Package Installer
-set(CPACK_PACKAGE_NAME ${PROJECT_NAME})
-set(CPACK_SYSTEM_NAME "i386")
-if( CMAKE_SIZEOF_VOID_P EQUAL 8 )
-    set(CPACK_SYSTEM_NAME "amd64")    
-endif()
+#set(CPACK_PACKAGE_NAME ${PROJECT_NAME})
+#set(CPACK_SYSTEM_NAME "i386")
+#if( CMAKE_SIZEOF_VOID_P EQUAL 8 )
+#    set(CPACK_SYSTEM_NAME "amd64")    
+#endif()
 
-set(CPACK_PACKAGE_VERSION "${URDF_VERSION}")
-set(CPACK_PACKAGE_FILE_NAME "${CPACK_PACKAGE_NAME}_${CPACK_PACKAGE_VERSION}_${CPACK_SYSTEM_NAME}")
-set(CPACK_DEBIAN_PACKAGE_DEPENDS "console_bridge, urdfdom_headers")
-set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Golems Lab, GATech")
+#set(CPACK_PACKAGE_VERSION "${URDF_VERSION}")
+#set(CPACK_PACKAGE_FILE_NAME "${CPACK_PACKAGE_NAME}_${CPACK_PACKAGE_VERSION}_${CPACK_SYSTEM_NAME}")
+#set(CPACK_DEBIAN_PACKAGE_DEPENDS "console_bridge, urdfdom_headers")
+#set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Golems Lab, GATech")
 
-set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "${PKG_DESC}")
-set(CPACK_PACKAGE_VENDOR "Humanoids Lab at GT")
+#set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "${PKG_DESC}")
+#set(CPACK_PACKAGE_VENDOR "Humanoids Lab at GT")
 
-include(CPack)
+#include(CPack)
