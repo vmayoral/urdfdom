@@ -23,10 +23,33 @@ endif (MSVC OR MSVC90 OR MSVC10)
 
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
-include(SearchForTinyXML)
-include_directories(${tinyxml_include_dirs})
-link_directories(${tinyxml_library_dirs})
-add_definitions(${tinyxml_cflags})
+####################################################
+# According to http://www.ros.org/wiki/tinyxml:
+
+find_package(catkin REQUIRED
+    cmake_modules
+  )
+  
+find_package(TinyXML REQUIRED)
+
+# Declare a catkin package
+catkin_package(
+    LIBRARIES
+    INCLUDE_DIRS
+    DEPENDS
+      TinyXML
+  )
+
+# Build                                                                                                                                                   
+include_directories(${catkin_INCLUDE_DIRS} ${TinyXML_INCLUDE_DIRS})  
+
+#include(SearchForTinyXML)
+#include_directories(${tinyxml_include_dirs})
+#link_directories(${tinyxml_library_dirs})
+#add_definitions(${tinyxml_cflags})
+
+####################################################
+
 
 find_package(urdfdom_headers REQUIRED)
 include_directories(SYSTEM ${urdfdom_headers_INCLUDE_DIRS})
