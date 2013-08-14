@@ -4,7 +4,6 @@ project (urdfdom CXX C)
 set (URDF_MAJOR_VERSION 0)
 set (URDF_MINOR_VERSION 2)
 set (URDF_PATCH_VERSION 8)
-set (TinyXML_DIR /home/victor/setup-scripts/sources/beagle-ros/recipes/urdfdom)
 
 set (URDF_VERSION ${URDF_MAJOR_VERSION}.${URDF_MINOR_VERSION}.${URDF_PATCH_VERSION})
 set(PKG_DESC "urdfdom")
